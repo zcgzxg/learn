@@ -1,5 +1,5 @@
 <template>
-  <a-menu id="dddddd" v-model:openKeys="openKeys" v-model:selectedKeys="selectedKeys" style="width: 256px" mode="inline"
+  <a-menu id="dddddd" v-model:openKeys="openKeys" v-model:selectedKeys="selectedKeys" style="width: 200px" mode="inline"
     @click="handleClick">
     <a-sub-menu key="sub1" @titleClick="titleClick">
       <template #icon>
@@ -10,14 +10,14 @@
         <template #icon>
           <QqOutlined />
         </template>
-        <template #title>Item 1</template>
-        <a-menu-item key="1">Option 1</a-menu-item>
-        <a-menu-item key="2">Option 2</a-menu-item>
+        <!-- <template #title>Item 1</template> -->
+        <a-menu-item key="home">Home</a-menu-item>
+        <a-menu-item key="about">About</a-menu-item>
+        <a-menu-item key="condition_render">condition_render</a-menu-item>
       </a-menu-item-group>
-      <a-menu-item-group key="g2" title="Item 2">
-        <a-menu-item key="3">Option 3</a-menu-item>
+      <!-- <a-menu-item-group key="g2" title="Item 2">
         <a-menu-item key="4">Option 4</a-menu-item>
-      </a-menu-item-group>
+      </a-menu-item-group> -->
     </a-sub-menu>
     <a-sub-menu key="sub2" @titleClick="titleClick">
       <template #icon>
@@ -45,7 +45,7 @@
 </template>
 <script>
 import { defineComponent, ref, watch } from 'vue';
-import {useRouter, useRoute} from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { MailOutlined, QqOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons-vue';
 export default defineComponent({
   components: {
@@ -64,7 +64,8 @@ export default defineComponent({
 
     const handleClick = e => {
       console.log('click', e.key);
-      router.push({})
+      console.log(route)
+      router.push({ name: e.key })
     };
 
     const titleClick = e => {
@@ -84,3 +85,5 @@ export default defineComponent({
 
 });
 </script>
+<style>
+</style>

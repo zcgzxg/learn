@@ -1,10 +1,13 @@
 <template>
   <div class="box">
-    <h2 class="title">App</h2>
+    <h1 class="title">App</h1>
     <!-- <router-link class="routerLink" to="/">Home</router-link>
     <router-link class="routerLink" to="/about">About</router-link> -->
-    <UserMenu></UserMenu>
-    <router-view></router-view>
+    <div class="body">
+      <UserMenu class="appMenu"></UserMenu>
+      <router-view class="appContent"></router-view>
+    </div>
+
   </div>
 </template>
 <script>
@@ -22,28 +25,40 @@ export default {
 
 <style>
 .box {
-  display: felx;
-  flex-direction: row;
-  justify-items: center;
   position: absolute;
   left: calc(50% - 350px);
   width: 700px;
+  
+}
+.body {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  position: absolute;
+  width: 700px;
   border: dashed #ccc 1px;
-  padding: 20px;
 }
 
 .title {
+  width: 50px;
   margin: 0;
-  padding: 10px 0px;
+  padding: 10px 0px 10px 10px;
 }
 
 .routerLink {
   padding: 5px 10px;
   text-decoration: none;
-  background: #;
 }
 
 .routerLink:hover {
   color: aquamarine;
+}
+
+.appMenu {
+  width: 200px;
+}
+
+.appContent {
+  width: 400px;
 }
 </style>
