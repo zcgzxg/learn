@@ -26,21 +26,21 @@ export default {
 <style>
 .box {
   position: absolute;
-  left: calc(50% - 350px);
-  width: 700px;
-  
+  width: 80%;
+  left: 10%;
+  /* background: red; */
 }
 .body {
   display: flex;
   flex-direction: row;
   justify-items: center;
   position: absolute;
-  width: 700px;
+  width: 100%;
   border: dashed #ccc 1px;
+  flex-grow: 1;
 }
 
 .title {
-  width: 50px;
   margin: 0;
   padding: 10px 0px 10px 10px;
 }
@@ -55,10 +55,16 @@ export default {
 }
 
 .appMenu {
-  width: 200px;
+  flex-basis: 100px;
+  width: 100px;
+  flex-grow: 0.2;
+  flex-shrink: 0.8;
 }
 
 .appContent {
-  width: 400px;
+  flex-basis: 400px;
+  width: 100px;
+  flex-grow: 0.8;
+  flex-shrink: 0.2;
 }
 </style>

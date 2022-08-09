@@ -1,20 +1,21 @@
 <template>
-  <a-menu id="dddddd" v-model:openKeys="openKeys" v-model:selectedKeys="selectedKeys" style="width: 200px" mode="inline"
-    @click="handleClick">
+  <a-menu
+    id="dddddd"
+    v-model:openKeys="openKeys"
+    v-model:selectedKeys="selectedKeys"
+    style="width: 200px"
+    mode="inline"
+    @click="handleClick"
+  >
     <a-sub-menu key="sub1" @titleClick="titleClick">
       <template #icon>
         <MailOutlined />
       </template>
       <template #title>Navigation One</template>
-      <a-menu-item-group key="g1">
-        <template #icon>
-          <QqOutlined />
-        </template>
-        <!-- <template #title>Item 1</template> -->
-        <a-menu-item key="home">Home</a-menu-item>
-        <a-menu-item key="about">About</a-menu-item>
-        <a-menu-item key="condition_render">condition_render</a-menu-item>
-      </a-menu-item-group>
+      <!-- <template #title>Item 1</template> -->
+      <a-menu-item key="home">Home</a-menu-item>
+      <a-menu-item key="about">About</a-menu-item>
+      <a-menu-item key="condition_render">condition_render</a-menu-item>
       <!-- <a-menu-item-group key="g2" title="Item 2">
         <a-menu-item key="4">Option 4</a-menu-item>
       </a-menu-item-group> -->
@@ -44,37 +45,45 @@
   </a-menu>
 </template>
 <script>
-import { defineComponent, ref, watch } from 'vue';
-import { useRouter, useRoute } from 'vue-router'
-import { MailOutlined, QqOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons-vue';
+import { defineComponent, ref, watch } from "vue";
+import { useRouter, useRoute } from "vue-router";
+import {
+  MailOutlined,
+  // QqOutlined,
+  AppstoreOutlined,
+  SettingOutlined,
+} from "@ant-design/icons-vue";
 export default defineComponent({
   components: {
     MailOutlined,
-    QqOutlined,
+    // QqOutlined,
     AppstoreOutlined,
     SettingOutlined,
   },
 
   setup() {
-    const router = useRouter()
-    const route = useRoute()
+    const router = useRouter();
+    const route = useRoute();
 
-    const selectedKeys = ref(['1']);
-    const openKeys = ref(['sub1']);
+    const selectedKeys = ref(["1"]);
+    const openKeys = ref(["sub1"]);
 
-    const handleClick = e => {
-      console.log('click', e.key);
-      console.log(route)
-      router.push({ name: e.key })
+    const handleClick = (e) => {
+      console.log("click", e.key);
+      console.log(route);
+      router.push({ name: e.key });
     };
 
-    const titleClick = e => {
-      console.log('titleClick', e);
+    const titleClick = (e) => {
+      console.log("titleClick", e);
     };
 
-    watch(() => openKeys, val => {
-      console.log('openKeys', val);
-    });
+    watch(
+      () => openKeys,
+      (val) => {
+        console.log("openKeys", val);
+      }
+    );
     return {
       selectedKeys,
       openKeys,
@@ -82,7 +91,6 @@ export default defineComponent({
       titleClick,
     };
   },
-
 });
 </script>
 <style>

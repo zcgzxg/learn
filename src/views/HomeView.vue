@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img class="portrait" alt="Ginlon" src="../assets/portrait.png">
+    <HelloWorld msg="Welcome to My Vue.js App"/>
   </div>
 </template>
 
@@ -16,3 +16,11 @@ export default {
   }
 }
 </script>
+
+<style>
+.portrait{
+  width: 60%;
+  margin: 20px;
+  box-shadow: 5px 5px 5px rgba(0,0,128,0.3);
+}
+</style>
