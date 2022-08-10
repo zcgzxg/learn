@@ -39,7 +39,7 @@ const routes = [
     path: "/antbreadcrumb/:id",
     name: "antBreadcrumb",
     component: () => import("../views/AntBreadcrumb.vue"),
-    props:true
+    props: true,
   },
 ];
 

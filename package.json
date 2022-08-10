@@ -26,6 +26,7 @@
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "prettier": "^2.7.1",
     "vite": "^2.9.9"
   },
   "_id": "vue-begin01@0.0.0",
