@@ -1,21 +1,17 @@
 <template>
-  <a-menu
-    id="dddddd"
-    v-model:openKeys="openKeys"
-    v-model:selectedKeys="selectedKeys"
-    style="width: 200px"
-    mode="inline"
-    @click="handleClick"
-  >
+  <a-menu id="dddddd" v-model:openKeys="openKeys" v-model:selectedKeys="selectedKeys" style="width: 200px" mode="inline"
+    @click="handleClick">
     <a-sub-menu key="sub1" @titleClick="titleClick">
       <template #icon>
         <MailOutlined />
       </template>
-      <template #title>Navigation One</template>
+      <!-- 插槽 -->
+      <template #title>08-10</template>
       <!-- <template #title>Item 1</template> -->
       <a-menu-item key="home">Home</a-menu-item>
-      <a-menu-item key="about">About</a-menu-item>
-      <a-menu-item key="condition_render">condition_render</a-menu-item>
+      <a-menu-item key="antTypography">antTypography</a-menu-item>
+      <a-menu-item key="conditionRender">conditionRender</a-menu-item>
+      <a-menu-item key="grid">Grid 栅格</a-menu-item>
       <!-- <a-menu-item-group key="g2" title="Item 2">
         <a-menu-item key="4">Option 4</a-menu-item>
       </a-menu-item-group> -->

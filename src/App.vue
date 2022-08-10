@@ -12,6 +12,7 @@
 </template>
 <script>
 import UserMenu from "./components/UserMenu.vue"
+
 export default {
   data() {
     return {

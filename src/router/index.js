@@ -8,17 +8,22 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
+    path: '/antTypography',
+    name: 'antTypography',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import('../views/AboutView.vue')
+    component: () => import('../views/AntTypography.vue')
   },
   {
-    path:'/condition_render',
-    name:'condition_render',
-    component:() => import('../condition_render.vue')
+    path:'/conditionRender',
+    name:'conditionRender',
+    component:() => import('../conditionRender.vue')
+  },
+  {
+    path:'/grid',
+    name:'grid',
+    component:()=> import('../views/AntGrid.vue')
   }
   
 ]

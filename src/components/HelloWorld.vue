@@ -1,11 +1,11 @@
 <template>
   <div class="hello">
+    <slot name="portrait" />
     <h1>{{ msg }}</h1>
     <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
+      Vue 学习过程
     </p>
+    <p>{{ mail }}</p>
   </div>
 </template>
 
@@ -13,12 +13,13 @@
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: String,
+    mail: String,
   }
 }
 </script>
 <style>
-.hello{
+.hello {
   padding: 20px;
 }
 </style>
