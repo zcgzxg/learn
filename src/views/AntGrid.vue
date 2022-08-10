@@ -31,7 +31,7 @@
         </a-row>
 
         <div class="gutter-example">
-            <a-row :gutter="[16,32,64]">
+            <a-row :gutter="[{xs: 8, sm: 16, md: 24, lg: 32 },16]">
                 <a-col class="gutter-row" :span="6">
                     <div class="gutter-box">col-6 gutter:16</div>
                 </a-col>

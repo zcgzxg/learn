@@ -74,7 +74,7 @@ export default defineComponent({
     const handleClick = (e) => {
       console.log("click", e.key);
       console.log(route);
-      router.push({ name: e.key,params:{id:123} });
+      router.push({ name: e.key, params:{id:123} });
     };
 
     const titleClick = (e) => {
