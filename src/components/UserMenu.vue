@@ -1,4 +1,7 @@
 <template>
+<a-affix :offset-top="0">
+
+
   <a-menu id="dddddd" v-model:openKeys="openKeys" v-model:selectedKeys="selectedKeys" style="width: 200px" mode="inline"
     @click="handleClick">
     <a-sub-menu key="sub1" @titleClick="titleClick">
@@ -12,6 +15,9 @@
       <a-menu-item key="antTypography">antTypography</a-menu-item>
       <a-menu-item key="conditionRender">conditionRender</a-menu-item>
       <a-menu-item key="grid">Grid 栅格</a-menu-item>
+      <a-menu-item key="antLayout">Layout 布局</a-menu-item>
+      <a-menu-item key="antSpace">Spcae 间距</a-menu-item>
+      <a-menu-item key="antBreadcrumb">Breadcrumb 面包屑</a-menu-item>
       <!-- <a-menu-item-group key="g2" title="Item 2">
         <a-menu-item key="4">Option 4</a-menu-item>
       </a-menu-item-group> -->
@@ -39,6 +45,7 @@
       <a-menu-item key="12">Option 12</a-menu-item>
     </a-sub-menu>
   </a-menu>
+  </a-affix>
 </template>
 <script>
 import { defineComponent, ref, watch } from "vue";
@@ -67,7 +74,7 @@ export default defineComponent({
     const handleClick = (e) => {
       console.log("click", e.key);
       console.log(route);
-      router.push({ name: e.key });
+      router.push({ name: e.key,params:{id:123} });
     };
 
     const titleClick = (e) => {

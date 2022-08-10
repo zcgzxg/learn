@@ -31,7 +31,7 @@
         </a-row>
 
         <div class="gutter-example">
-            <a-row :gutter="16">
+            <a-row :gutter="[16,32,64]">
                 <a-col class="gutter-row" :span="6">
                     <div class="gutter-box">col-6 gutter:16</div>
                 </a-col>
@@ -69,12 +69,12 @@ export default {
 /* scoped 将样式的作用域限制在当前组件中 */
 .ant-col {
     background: yellows;
-    height: 100px;
+    height: 50px;
 }
 
 .ant-col-12 {
     background: blue;
-    height: 100px;
+    height: 50px;
 }
 
 .ant-col-2 {

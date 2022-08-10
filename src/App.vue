@@ -24,21 +24,16 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .box {
   position: absolute;
-  width: 80%;
+  width: max(80%,620px);
   left: 10%;
-  /* background: red; */
 }
 .body {
-  display: flex;
-  flex-direction: row;
-  justify-items: center;
   position: absolute;
   width: 100%;
   border: dashed #ccc 1px;
-  flex-grow: 1;
 }
 
 .title {
@@ -56,16 +51,18 @@ export default {
 }
 
 .appMenu {
-  flex-basis: 100px;
-  width: 100px;
-  flex-grow: 0.2;
-  flex-shrink: 0.8;
+  width: 200px;
+  float: left;
 }
 
 .appContent {
-  flex-basis: 400px;
-  width: 100px;
-  flex-grow: 0.8;
-  flex-shrink: 0.2;
+  width: 400px;
+  position: relative;
+  float: left;
+  left: 10px;
+  top: 0px
+}
+.content{
+  padding: 20px;
 }
 </style>
