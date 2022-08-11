@@ -1,34 +1,26 @@
 {
-  "name": "vue-begin01",
-  "version": "0.0.0",
+  "name": "learn",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "dev": "vite",
-    "preview": "vite preview"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "ant-design-vue": "^3.2.11",
-    "axios": "^0.27.2",
+    "ant-design-vue": "^3.3.0-beta.2",
     "core-js": "^3.8.3",
-    "eslint": "^8.21.0",
-    "eslint-plugin-vue": "^9.3.0",
-    "vue": "^3.2.37",
-    "vue-router": "^4.1.2"
+    "vue": "^3.2.13",
+    "vue-router": "^4.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
-    "@vitejs/plugin-vue": "^2.3.3",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
-    "prettier": "^2.7.1",
-    "vite": "^2.9.9"
-  },
-  "_id": "vue-begin01@0.0.0",
-  "readme": "ERROR: No README data found!"
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3"
+  }
 }

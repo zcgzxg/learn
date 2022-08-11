@@ -2,7 +2,7 @@
   <div>
     <p>{{obj.message}}</p>
     <p>{{newMsg}}</p>
-  </div>
+</div>
 </template>
 
 <script>

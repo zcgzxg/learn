@@ -60,6 +60,7 @@ import {
   AppstoreOutlined,
   SettingOutlined
 } from '@ant-design/icons-vue'
+/* eslint-disable */ 
 export default defineComponent({
   components: {
     MailOutlined,
@@ -76,18 +77,11 @@ export default defineComponent({
     const openKeys = ref(['sub1'])
 
     const handleClick = (e) => {
-<<<<<<< HEAD
+
       console.log("click", e.key);
       console.log(route);
       router.push({ name: e.key, params:{id:123} });
-    };
-=======
-      console.log('click', e.key)
-      console.log(route)
-      router.push({ name: e.key, params: { id: 123 } })
     }
->>>>>>> 2436c09996499baa73d3c0b55192ed0a59f56a88
-
     const titleClick = (e) => {
       console.log('titleClick', e)
     }
