@@ -40,7 +40,26 @@ const routes = [
     name: "antBreadcrumb",
     component: () => import("../views/AntBreadcrumb.vue"),
     props: true,
+    children:[
+      {
+        path:'user',
+        name:'user',
+        component:() => import('../views/AntBreadcrumbChildren/user.vue'),
+        props:true
+      },
+      {
+        path:'about',
+        name:'about',
+        component:() => import('../views/AntBreadcrumbChildren/about.vue'),
+        props:true
+      }
+    ]
   },
+  {
+    path:"/Dropdown",
+    name:"antDropdown",
+    component:() => import('../views/AntDropdown.vue')
+  }
 ];
 
 const router = createRouter({

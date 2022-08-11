@@ -24,14 +24,14 @@
         <a-menu-item key="antBreadcrumb">Breadcrumb 面包屑</a-menu-item>
         <!-- <a-menu-item-group key="g2" title="Item 2">
         <a-menu-item key="4">Option 4</a-menu-item>
-      </a-menu-item-group> -->
+        </a-menu-item-group>-->
       </a-sub-menu>
       <a-sub-menu key="sub2" @titleClick="titleClick">
         <template #icon>
           <AppstoreOutlined />
         </template>
-        <template #title>Navigation Two</template>
-        <a-menu-item key="5">Option 5</a-menu-item>
+        <template #title>08-11</template>
+        <a-menu-item key="antDropdown">Option 5</a-menu-item>
         <a-menu-item key="6">Option 6</a-menu-item>
         <a-sub-menu key="sub3" title="Submenu">
           <a-menu-item key="7">Option 7</a-menu-item>
@@ -52,15 +52,16 @@
   </a-affix>
 </template>
 <script>
-import { defineComponent, ref, watch } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
+import { defineComponent, ref, watch } from "vue";
+import { useRouter, useRoute } from "vue-router";
 import {
   MailOutlined,
   // QqOutlined,
   AppstoreOutlined,
   SettingOutlined
-} from '@ant-design/icons-vue'
-/* eslint-disable */ 
+} from "@ant-design/icons-vue";
+/* eslint-disable */
+
 export default defineComponent({
   components: {
     MailOutlined,
@@ -70,36 +71,35 @@ export default defineComponent({
   },
 
   setup() {
-    const router = useRouter()
-    const route = useRoute()
+    const router = useRouter();
+    const route = useRoute();
 
-    const selectedKeys = ref(['1'])
-    const openKeys = ref(['sub1'])
+    const selectedKeys = ref(["1"]);
+    const openKeys = ref(["sub1"]);
 
-    const handleClick = (e) => {
-
+    const handleClick = e => {
       console.log("click", e.key);
       console.log(route);
-      router.push({ name: e.key, params:{id:123} });
-    }
-    const titleClick = (e) => {
-      console.log('titleClick', e)
-    }
+      router.push({ name: e.key, params: { id: "Ginlon" } });
+    };
+    const titleClick = e => {
+      console.log("titleClick", e);
+    };
 
     watch(
       () => openKeys,
-      (val) => {
-        console.log('openKeys', val)
+      val => {
+        console.log("openKeys", val);
       }
-    )
+    );
     return {
       selectedKeys,
       openKeys,
       handleClick,
       titleClick
-    }
+    };
   }
-})
+});
 </script>
 <style>
 </style>

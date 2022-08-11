@@ -1,15 +1,17 @@
 <template>
-<div>
+  <div>
     <h2>Welcome {{id}}</h2>
-</div>
+  </div>
 </template>
 
 <script>
 export default {
-    props:['id']
-}
+  props: ["id"],
+  onmount() {
+    console.log(this.id);
+  }
+};
 </script>
 
 <style>
-
 </style>
