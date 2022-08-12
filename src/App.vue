@@ -32,6 +32,9 @@ export default {
   position: absolute;
   width: 100%;
   border: dashed #ccc 1px;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
 }
 
 .title {
@@ -50,13 +53,13 @@ export default {
 
 .appMenu {
   width: 200px;
-  float: left;
+  /* float: left; */
 }
 
 .appContent {
-  width: 400px;
+  width: 800px;
   position: relative;
-  float: left;
+  /* float: left; */
   left: 10px;
   top: 0px;
 }

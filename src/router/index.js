@@ -59,6 +59,26 @@ const routes = [
     path:"/Dropdown",
     name:"antDropdown",
     component:() => import('../views/AntDropdown.vue')
+  },
+  {
+    path:"/Menu",
+    name:"antMenu",
+    component:()=>import('../views/AntMenu.vue')
+  },
+  {
+    path:"/PageHeader",
+    name:"antPageHeader",
+    component:()=>import('../views/AntPageHeader.vue')
+  },
+  {
+    path:'/Pagination',
+    name:"antPagination",
+    component:()=>import('../views/AntPagination')
+  },
+  {
+    path:'/Steps',
+    name:"antSteps",
+    component:()=>import('../views/AntSteps.vue')
   }
 ];
 

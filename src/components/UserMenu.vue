@@ -1,5 +1,12 @@
 <template>
-  <a-affix :offset-top="0">
+  <div>
+    <a-button type="primary" @click="toggleCollapsed">改变导航样式</a-button>
+    <a-switch
+      :checked="theme === 'dark'"
+      checked-children="Dark"
+      un-checked-children="Light"
+      @change="changeTheme"
+    />
     <a-menu
       id="dddddd"
       v-model:openKeys="openKeys"
@@ -7,6 +14,8 @@
       style="width: 200px"
       mode="inline"
       @click="handleClick"
+      :inline-collapsed="collapsed"
+      :theme="theme"
     >
       <a-sub-menu key="sub1" @titleClick="titleClick">
         <template #icon>
@@ -31,25 +40,20 @@
           <AppstoreOutlined />
         </template>
         <template #title>08-11</template>
-        <a-menu-item key="antDropdown">Option 5</a-menu-item>
-        <a-menu-item key="6">Option 6</a-menu-item>
-        <a-sub-menu key="sub3" title="Submenu">
-          <a-menu-item key="7">Option 7</a-menu-item>
-          <a-menu-item key="8">Option 8</a-menu-item>
-        </a-sub-menu>
+        <a-menu-item key="antDropdown">Dropdwon</a-menu-item>
       </a-sub-menu>
-      <a-sub-menu key="sub4">
+      <a-sub-menu key="sub3">
         <template #icon>
           <SettingOutlined />
         </template>
-        <template #title>Navigation Three</template>
-        <a-menu-item key="9">Option 9</a-menu-item>
-        <a-menu-item key="10">Option 10</a-menu-item>
-        <a-menu-item key="11">Option 11</a-menu-item>
-        <a-menu-item key="12">Option 12</a-menu-item>
+        <template #title>08-12</template>
+        <a-menu-item key="antMenu">Menu 导航</a-menu-item>
+        <a-menu-item key="antPageHeader">PageHeader 页头</a-menu-item>
+        <a-menu-item key="antPagination">Pagintion 分页</a-menu-item>
+        <a-menu-item key="antSteps">Steps 步骤条</a-menu-item>
       </a-sub-menu>
     </a-menu>
-  </a-affix>
+  </div>
 </template>
 <script>
 import { defineComponent, ref, watch } from "vue";
@@ -73,10 +77,19 @@ export default defineComponent({
   setup() {
     const router = useRouter();
     const route = useRoute();
+    const collapsed = ref(false);
+    function toggleCollapsed() {
+      collapsed.value = !collapsed.value;
+    }
+    // --------- 导航主题 -----------------
+    const theme = ref("light");
+    const changeTheme = checked => {
+      theme.value = checked ? "dark" : "light";
+    };
+    // -----------------------------------
 
-    const selectedKeys = ref(["1"]);
-    const openKeys = ref(["sub1"]);
-
+    const selectedKeys = ref(["antPagination"]); // 默认选中的菜单
+    const openKeys = ref(["sub3"]); // 默认展开的导航
     const handleClick = e => {
       console.log("click", e.key);
       console.log(route);
@@ -96,7 +109,11 @@ export default defineComponent({
       selectedKeys,
       openKeys,
       handleClick,
-      titleClick
+      titleClick,
+      collapsed,
+      toggleCollapsed,
+      theme,
+      changeTheme
     };
   }
 });
