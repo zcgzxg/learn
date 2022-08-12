@@ -51,6 +51,7 @@
         <a-menu-item key="antPageHeader">PageHeader 页头</a-menu-item>
         <a-menu-item key="antPagination">Pagintion 分页</a-menu-item>
         <a-menu-item key="antSteps">Steps 步骤条</a-menu-item>
+        <a-menu-item key="antAutoComplete">AutoComplete 自动完成</a-menu-item>
       </a-sub-menu>
     </a-menu>
   </div>

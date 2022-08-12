@@ -79,6 +79,11 @@ const routes = [
     path:'/Steps',
     name:"antSteps",
     component:()=>import('../views/AntSteps.vue')
+  },
+  {
+    path:'/AutoComplete',
+    name:"antAutoComplete",
+    component:()=>import('../views/AntAutoComplete.vue')
   }
 ];
 
