@@ -53,6 +53,19 @@
         <a-menu-item key="antSteps">Steps 步骤条</a-menu-item>
         <a-menu-item key="antAutoComplete">AutoComplete 自动完成</a-menu-item>
       </a-sub-menu>
+      <a-sub-menu key="sub4" title="08-13">
+        <template #icon>
+          <AppstoreOutlined />
+        </template>
+        <a-menu-item key="AntCascader">Cascader 级联选择</a-menu-item>
+      </a-sub-menu>
+      <a-sub-menu key="sub5" title="08-14">
+        <template #icon>
+          <SettingOutlined />
+        </template>
+        <a-menu-item key="AntCheckbox">Checkbox 多选框</a-menu-item>
+        <a-menu-item key="AntDatePicker">DatePicker 日期选择框</a-menu-item>
+      </a-sub-menu>
     </a-menu>
   </div>
 </template>
@@ -63,7 +76,7 @@ import {
   MailOutlined,
   // QqOutlined,
   AppstoreOutlined,
-  SettingOutlined
+  SettingOutlined,
 } from "@ant-design/icons-vue";
 /* eslint-disable */
 
@@ -72,7 +85,7 @@ export default defineComponent({
     MailOutlined,
     // QqOutlined,
     AppstoreOutlined,
-    SettingOutlined
+    SettingOutlined,
   },
 
   setup() {
@@ -84,25 +97,25 @@ export default defineComponent({
     }
     // --------- 导航主题 -----------------
     const theme = ref("light");
-    const changeTheme = checked => {
+    const changeTheme = (checked) => {
       theme.value = checked ? "dark" : "light";
     };
     // -----------------------------------
 
     const selectedKeys = ref(["antPagination"]); // 默认选中的菜单
     const openKeys = ref(["sub3"]); // 默认展开的导航
-    const handleClick = e => {
+    const handleClick = (e) => {
       console.log("click", e.key);
       console.log(route);
       router.push({ name: e.key, params: { id: "Ginlon" } });
     };
-    const titleClick = e => {
+    const titleClick = (e) => {
       console.log("titleClick", e);
     };
 
     watch(
       () => openKeys,
-      val => {
+      (val) => {
         console.log("openKeys", val);
       }
     );
@@ -114,10 +127,9 @@ export default defineComponent({
       collapsed,
       toggleCollapsed,
       theme,
-      changeTheme
+      changeTheme,
     };
-  }
+  },
 });
 </script>
-<style>
-</style>
+<style></style>

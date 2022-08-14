@@ -84,6 +84,20 @@ const routes = [
     path:'/AutoComplete',
     name:"antAutoComplete",
     component:()=>import('../views/AntAutoComplete.vue')
+  },{
+    path:'/Cascader',
+    name:'AntCascader',
+    component:()=>import('../views/AntCascader.vue')
+  },
+  {
+    path:'/Checkbox',
+    name:'AntCheckbox',
+    component:()=>import('../views/AntCheckbox.vue')
+  },
+  {
+    path:'/DatePicker',
+    name:'AntDatePicker',
+    component:()=>import('../views/AntDatePicker.vue')
   }
 ];
 
