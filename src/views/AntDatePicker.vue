@@ -17,7 +17,7 @@ export default defineComponent({
     const value = ref();
 
     // disabledDate 会遍历所有显示的日期
-    const disabledDate = (current) => {
+    const disabledDate = current => {
       if (!dates.value || dates.value.length === 0) {
         return false;
       }
@@ -26,21 +26,21 @@ export default defineComponent({
       //   第一个参数为日期类型，第二参数是度量单位，默认为整数，
       //   如果需要浮点则传入第三个参数为true
       const diffDate = current.diff(dates.value[0], "days" /*,true*/);
-      console.log(diffDate);
+      // console.log(diffDate)
       return Math.abs(diffDate) > 7; // 大于7则不可选取
     };
 
-    const onOpenChange = (open) => {
+    const onOpenChange = open => {
       if (open) {
         dates.value = [];
       }
     };
 
-    const onChange = (val) => {
+    const onChange = val => {
       value.value = val;
     };
 
-    const onCalendarChange = (val) => {
+    const onCalendarChange = val => {
       dates.value = val;
     };
 
@@ -50,8 +50,8 @@ export default defineComponent({
       disabledDate,
       onOpenChange,
       onChange,
-      onCalendarChange,
+      onCalendarChange
     };
-  },
+  }
 });
 </script>

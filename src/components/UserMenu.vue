@@ -66,6 +66,16 @@
         <a-menu-item key="AntCheckbox">Checkbox 多选框</a-menu-item>
         <a-menu-item key="AntDatePicker">DatePicker 日期选择框</a-menu-item>
       </a-sub-menu>
+      <a-sub-menu key="sub6" title="08-15">
+        <template #icon>
+          <SettingOutlined />
+        </template>
+        <a-menu-item key="AntForm">Form 表单</a-menu-item>
+        <a-menu-item key="AntForm2">Form 表单2</a-menu-item>
+        <a-menu-item key="AntForm3">Form 表单3</a-menu-item>
+        <a-menu-item key="AntInput">Input 输入框</a-menu-item>
+        <a-menu-item key="AntMentions">Mentions 提及</a-menu-item>
+      </a-sub-menu>
     </a-menu>
   </div>
 </template>
@@ -76,7 +86,7 @@ import {
   MailOutlined,
   // QqOutlined,
   AppstoreOutlined,
-  SettingOutlined,
+  SettingOutlined
 } from "@ant-design/icons-vue";
 /* eslint-disable */
 
@@ -85,7 +95,7 @@ export default defineComponent({
     MailOutlined,
     // QqOutlined,
     AppstoreOutlined,
-    SettingOutlined,
+    SettingOutlined
   },
 
   setup() {
@@ -97,25 +107,25 @@ export default defineComponent({
     }
     // --------- 导航主题 -----------------
     const theme = ref("light");
-    const changeTheme = (checked) => {
+    const changeTheme = checked => {
       theme.value = checked ? "dark" : "light";
     };
     // -----------------------------------
 
-    const selectedKeys = ref(["antPagination"]); // 默认选中的菜单
-    const openKeys = ref(["sub3"]); // 默认展开的导航
-    const handleClick = (e) => {
+    const selectedKeys = ref(["AntForm"]); // 默认选中的菜单
+    const openKeys = ref(["sub6"]); // 默认展开的导航
+    const handleClick = e => {
       console.log("click", e.key);
       console.log(route);
       router.push({ name: e.key, params: { id: "Ginlon" } });
     };
-    const titleClick = (e) => {
+    const titleClick = e => {
       console.log("titleClick", e);
     };
 
     watch(
       () => openKeys,
-      (val) => {
+      val => {
         console.log("openKeys", val);
       }
     );
@@ -127,9 +137,9 @@ export default defineComponent({
       collapsed,
       toggleCollapsed,
       theme,
-      changeTheme,
+      changeTheme
     };
-  },
+  }
 });
 </script>
 <style></style>

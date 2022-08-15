@@ -98,6 +98,30 @@ const routes = [
     path:'/DatePicker',
     name:'AntDatePicker',
     component:()=>import('../views/AntDatePicker.vue')
+  },
+  {
+    path:'/Form',
+    name:'AntForm',
+    component:()=>import('../views/AntForm.vue')
+  },{
+    path:'/Form2',
+    name:'AntForm2',
+    component:()=>import('../views/AntForm2.vue')
+  },
+  {
+    path:'/Form3',
+    name:'AntForm3',
+    component:()=>import('../views/AntForm3.vue')
+  },
+  {
+    path:'/Input',
+    name:'AntInput',
+    component:()=>import('../views/AntInput.vue')
+  },
+  {
+    path:'/Mentions',
+    name:'AntMentions',
+    component:()=>import('../views/AntMentions.vue')
   }
 ];
 
