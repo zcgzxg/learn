@@ -156,6 +156,16 @@ const routes = [
     path:'/TimePicker',
     name:'AntTimePicker',
     component:()=>import('../views/AntTimePicker.vue')
+  },
+  {
+    path:'/Transfer',
+    name:'AntTransfer',
+    component:()=>import('../views/AntTransfer.vue')
+  },
+  {
+    path:'/Transfer2',
+    name:'AntTransfer2',
+    component:()=>import('../views/AntTransfer2.vue')
   }
 ];
 

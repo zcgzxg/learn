@@ -84,6 +84,8 @@
         <a-menu-item key="AntSlider">Slider 滑动输入条</a-menu-item>
         <a-menu-item key="AntSwitch">Switch 开关</a-menu-item>
         <a-menu-item key="AntTimePicker">TimePicker 时间选择框</a-menu-item>
+        <a-menu-item key="AntTransfer">Transfer 穿梭框</a-menu-item>
+        <a-menu-item key="AntTransfer2">Transfer2 穿梭框2</a-menu-item>
       </a-sub-menu>
     </a-menu>
   </div>
