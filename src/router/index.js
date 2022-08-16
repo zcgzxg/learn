@@ -40,88 +40,122 @@ const routes = [
     name: "antBreadcrumb",
     component: () => import("../views/AntBreadcrumb.vue"),
     props: true,
-    children:[
+    children: [
       {
-        path:'user',
-        name:'user',
-        component:() => import('../views/AntBreadcrumbChildren/user.vue'),
-        props:true
+        path: 'user',
+        name: 'user',
+        component: () => import('../views/AntBreadcrumbChildren/user.vue'),
+        props: true
       },
       {
-        path:'about',
-        name:'about',
-        component:() => import('../views/AntBreadcrumbChildren/about.vue'),
-        props:true
+        path: 'about',
+        name: 'about',
+        component: () => import('../views/AntBreadcrumbChildren/about.vue'),
+        props: true
       }
     ]
   },
   {
-    path:"/Dropdown",
-    name:"antDropdown",
-    component:() => import('../views/AntDropdown.vue')
+    path: "/Dropdown",
+    name: "antDropdown",
+    component: () => import('../views/AntDropdown.vue')
   },
   {
-    path:"/Menu",
-    name:"antMenu",
-    component:()=>import('../views/AntMenu.vue')
+    path: "/Menu",
+    name: "antMenu",
+    component: () => import('../views/AntMenu.vue')
   },
   {
-    path:"/PageHeader",
-    name:"antPageHeader",
-    component:()=>import('../views/AntPageHeader.vue')
+    path: "/PageHeader",
+    name: "antPageHeader",
+    component: () => import('../views/AntPageHeader.vue')
   },
   {
-    path:'/Pagination',
-    name:"antPagination",
-    component:()=>import('../views/AntPagination')
+    path: '/Pagination',
+    name: "antPagination",
+    component: () => import('../views/AntPagination')
   },
   {
-    path:'/Steps',
-    name:"antSteps",
-    component:()=>import('../views/AntSteps.vue')
+    path: '/Steps',
+    name: "antSteps",
+    component: () => import('../views/AntSteps.vue')
   },
   {
-    path:'/AutoComplete',
-    name:"antAutoComplete",
-    component:()=>import('../views/AntAutoComplete.vue')
-  },{
-    path:'/Cascader',
-    name:'AntCascader',
-    component:()=>import('../views/AntCascader.vue')
+    path: '/AutoComplete',
+    name: "antAutoComplete",
+    component: () => import('../views/AntAutoComplete.vue')
+  }, {
+    path: '/Cascader',
+    name: 'AntCascader',
+    component: () => import('../views/AntCascader.vue')
   },
   {
-    path:'/Checkbox',
-    name:'AntCheckbox',
-    component:()=>import('../views/AntCheckbox.vue')
+    path: '/Checkbox',
+    name: 'AntCheckbox',
+    component: () => import('../views/AntCheckbox.vue')
   },
   {
-    path:'/DatePicker',
-    name:'AntDatePicker',
-    component:()=>import('../views/AntDatePicker.vue')
+    path: '/DatePicker',
+    name: 'AntDatePicker',
+    component: () => import('../views/AntDatePicker.vue')
   },
   {
-    path:'/Form',
-    name:'AntForm',
-    component:()=>import('../views/AntForm.vue')
-  },{
-    path:'/Form2',
-    name:'AntForm2',
-    component:()=>import('../views/AntForm2.vue')
+    path: '/Form',
+    name: 'AntForm',
+    component: () => import('../views/AntForm.vue')
+  }, {
+    path: '/Form2',
+    name: 'AntForm2',
+    component: () => import('../views/AntForm2.vue')
   },
   {
-    path:'/Form3',
-    name:'AntForm3',
-    component:()=>import('../views/AntForm3.vue')
+    path: '/Form3',
+    name: 'AntForm3',
+    component: () => import('../views/AntForm3.vue')
   },
   {
-    path:'/Input',
-    name:'AntInput',
-    component:()=>import('../views/AntInput.vue')
+    path: '/Input',
+    name: 'AntInput',
+    component: () => import('../views/AntInput.vue')
   },
   {
-    path:'/Mentions',
-    name:'AntMentions',
-    component:()=>import('../views/AntMentions.vue')
+    path: '/Mentions',
+    name: 'AntMentions',
+    component: () => import('../views/AntMentions.vue')
+  },
+  {
+    path: '/Mentions2',
+    name: 'AntMentions2',
+    component: () => import('../views/AntMentions2.vue')
+  },
+  {
+    path: '/Radio',
+    name: 'AntRadio',
+    component: () => import('../views/AntRadio.vue')
+  },
+  {
+    path: '/Rate',
+    name: 'AntRate',
+    component: () => import('../views/AntRate.vue')
+  },
+  {
+    path: '/Select',
+    name: 'AntSelect',
+    component: () => import('../views/AntSelect.vue')
+  }, {
+    path: '/Slider',
+    name: 'AntSlider',
+    component: () => import('../views/AntSlider.vue')
+  },
+  {
+    path: '/Switch',
+    name: 'AntSwitch',
+    component: () => import('../views/AntSwitch.vue')
+  },
+  {
+    path:'/TimePicker',
+    name:'AntTimePicker',
+    component:()=>import('../views/AntTimePicker.vue')
   }
 ];
 

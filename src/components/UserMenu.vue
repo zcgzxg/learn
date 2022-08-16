@@ -76,6 +76,15 @@
         <a-menu-item key="AntInput">Input 输入框</a-menu-item>
         <a-menu-item key="AntMentions">Mentions 提及</a-menu-item>
       </a-sub-menu>
+      <a-sub-menu key="sub7" title="08-16">
+        <a-menu-item key="AntMentions2">Mentions2 提及2</a-menu-item>
+        <a-menu-item key="AntRadio">Radio 单选框</a-menu-item>
+        <a-menu-item key="AntRate">Rate 评分</a-menu-item>
+        <a-menu-item key="AntSelect">Select 选择器</a-menu-item>
+        <a-menu-item key="AntSlider">Slider 滑动输入条</a-menu-item>
+        <a-menu-item key="AntSwitch">Switch 开关</a-menu-item>
+        <a-menu-item key="AntTimePicker">TimePicker 时间选择框</a-menu-item>
+      </a-sub-menu>
     </a-menu>
   </div>
 </template>
@@ -112,8 +121,8 @@ export default defineComponent({
     };
     // -----------------------------------
 
-    const selectedKeys = ref(["AntForm"]); // 默认选中的菜单
-    const openKeys = ref(["sub6"]); // 默认展开的导航
+    const selectedKeys = ref(["AntSelect"]); // 默认选中的菜单
+    const openKeys = ref(["sub7"]); // 默认展开的导航
     const handleClick = e => {
       console.log("click", e.key);
       console.log(route);
