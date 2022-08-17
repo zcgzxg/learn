@@ -166,6 +166,31 @@ const routes = [
     path:'/Transfer2',
     name:'AntTransfer2',
     component:()=>import('../views/AntTransfer2.vue')
+  },
+  {
+    path:'/Transfer3',
+    name:'AntTransfer3',
+    component:()=>import('../views/AntTransfer3.vue')
+  },
+  {
+    path:'/TreeSelect',
+    name:'AntTreeSelect',
+    component:()=>import('../views/AntTreeSelect.vue')
+  },
+  {
+    path:'/TreeSelect2',
+    name:'AntTreeSelect2',
+    component:()=>import('../views/AntTreeSelect2.vue')
+  },
+  {
+    path:'/Upload',
+    name:'AntUpload',
+    component:()=>import('../views/AntUpload.vue')
+  },
+  {
+    path:'/Avatar',
+    name:'AntAvatar',
+    component:()=>import('../views/AntAvatar.vue')
   }
 ];
 

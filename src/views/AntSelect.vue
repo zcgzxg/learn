@@ -84,7 +84,8 @@
         <!-- 
         dropdownRender：自定义下拉框内容
         类型 ({menuNode: VNode, props}) => VNode | v-slot
-        接受一个回调函数，回调函数第一个参数是一个对象，对象中包含节点类型和 props 传参
+        {menuNode:menu} 作用域传参 传递了一个menuNode节点出来 用解构运算将 menuNode 重命名为 menu
+        然后将 menu 传递到代理组件VNodes中去，并在VNodes中返回（此处的 menu 是组件通过作用域传参提供的 VNode 虚拟节点）
         -->
         <!-- TODO: VNodes -->
         <v-nodes :vnodes="menu" />
@@ -179,6 +180,9 @@ export default {
   },
   components: {
     PlusOutlined,
+    // VNodes:返回一个构建组件的函数，这个函数实际上就是setup()
+    // 接收的第一个值 '_' 实际上就是props，props 中未定义的值会传入到 attrs
+    // 此处 attrs 接收到了一个 vnode 虚拟节点对象，并将其返回
     VNodes: (_, { attrs }) => {
       //   console.log(attrs.vnodes);
       //   console.log(_);

@@ -22,7 +22,7 @@
           onItemSelect,
         }"
       >
-      <!-- TODO:有些复杂，看完表格的 demo 再回头看 -->
+        <!-- TODO:有些复杂，看完表格的 demo 再回头看 -->
         <a-table
           :row-selection="
             getRowSelection({
@@ -72,31 +72,35 @@ for (let i = 0; i < 20; i++) {
     key: i.toString(),
     title: `content${i + 1}`,
     description: `description of content${i + 1}`,
-    disabled: i % 4 === 0, // 部分标记为disabled
+    disabled: i % 4 === 0 // 部分标记为disabled
   });
 }
 
 // 取出被 3 整除的项放入初始目标组。 （key 值比显示值小 1）
 const originTargetKeys = mockData
-  .filter((item) => +item.key % 3 > 1 /* 通过 '+' 将 string 转换为 number 进行运算 */)
-  .map((item) => item.key);
-  
+  .filter(
+    item => +item.key % 3 > 1 /* 通过 '+' 将 string 转换为 number 进行运算 */
+  )
+  .map(item => item.key);
+
+// 创建两列不同的渲染方式
 const leftTableColumns = [
   {
     dataIndex: "title",
-    title: "Name",
+    title: "Name"
   },
   {
     dataIndex: "description",
-    title: "Description",
-  },
+    title: "Description"
+  }
 ];
 const rightTableColumns = [
   {
     dataIndex: "title",
-    title: "Name",
-  },
+    title: "Name"
+  }
 ];
+
 export default defineComponent({
   setup() {
     const targetKeys = ref(originTargetKeys);
@@ -105,7 +109,7 @@ export default defineComponent({
     const leftColumns = ref(leftTableColumns);
     const rightColumns = ref(rightTableColumns);
 
-    const onChange = (nextTargetKeys) => {
+    const onChange = nextTargetKeys => {
       targetKeys.value = nextTargetKeys;
     };
 
@@ -113,19 +117,19 @@ export default defineComponent({
       disabled,
       selectedKeys,
       onItemSelectAll,
-      onItemSelect,
+      onItemSelect
     }) => {
       return {
-        getCheckboxProps: (item) => ({
-          disabled: disabled || item.disabled,
+        getCheckboxProps: item => ({
+          disabled: disabled || item.disabled
         }),
 
         onSelectAll(selected, selectedRows) {
           const treeSelectedKeys = selectedRows
-            .filter((item) => !item.disabled)// 过滤 disabled 选项
+            .filter(item => !item.disabled) // 过滤 disabled 选项
             .map(({ key }) => key);
           const diffKeys = selected
-            ? difference(treeSelectedKeys, selectedKeys)// 返回差集，即第一个集合中，第二个集合没有的元素
+            ? difference(treeSelectedKeys, selectedKeys) // 返回差集，即第一个集合中，第二个集合没有的元素
             : difference(selectedKeys, treeSelectedKeys);
           onItemSelectAll(diffKeys, selected);
         },
@@ -134,7 +138,7 @@ export default defineComponent({
           onItemSelect(key, selected);
         },
 
-        selectedRowKeys: selectedKeys,
+        selectedRowKeys: selectedKeys
       };
     };
 
@@ -146,8 +150,8 @@ export default defineComponent({
       leftColumns,
       rightColumns,
       onChange,
-      getRowSelection,
+      getRowSelection
     };
-  },
+  }
 });
 </script>

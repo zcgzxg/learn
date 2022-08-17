@@ -77,6 +77,9 @@
         <a-menu-item key="AntMentions">Mentions 提及</a-menu-item>
       </a-sub-menu>
       <a-sub-menu key="sub7" title="08-16">
+        <template #icon>
+          <SettingOutlined />
+        </template>
         <a-menu-item key="AntMentions2">Mentions2 提及2</a-menu-item>
         <a-menu-item key="AntRadio">Radio 单选框</a-menu-item>
         <a-menu-item key="AntRate">Rate 评分</a-menu-item>
@@ -86,6 +89,16 @@
         <a-menu-item key="AntTimePicker">TimePicker 时间选择框</a-menu-item>
         <a-menu-item key="AntTransfer">Transfer 穿梭框</a-menu-item>
         <a-menu-item key="AntTransfer2">Transfer2 穿梭框2</a-menu-item>
+      </a-sub-menu>
+      <a-sub-menu key="sub8" title="08-17">
+        <template #icon>
+          <SettingOutlined />
+        </template>
+        <a-menu-item key="AntTransfer3">Transfer3 穿梭框3</a-menu-item>
+        <a-menu-item key="AntTreeSelect">TreeSelect 树选择</a-menu-item>
+        <a-menu-item key="AntTreeSelect2">TreeSelect2 树选择2</a-menu-item>
+        <a-menu-item key="AntUpload">Upload 上传</a-menu-item>
+        <a-menu-item key="AntAvatar">Avatar 头像</a-menu-item>
       </a-sub-menu>
     </a-menu>
   </div>
@@ -123,8 +136,8 @@ export default defineComponent({
     };
     // -----------------------------------
 
-    const selectedKeys = ref(["AntSelect"]); // 默认选中的菜单
-    const openKeys = ref(["sub7"]); // 默认展开的导航
+    const selectedKeys = ref(["AntTransfer3"]); // 默认选中的菜单
+    const openKeys = ref(["sub8"]); // 默认展开的导航
     const handleClick = e => {
       console.log("click", e.key);
       console.log(route);
