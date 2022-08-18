@@ -5,7 +5,7 @@
     list-type="picture-card"
     class="avatar-uploader"
     :show-upload-list="false"
-    action="/serve/upload"
+    action="/upload"
     :before-upload="beforeUpload"
     @change="handleChange"
   >

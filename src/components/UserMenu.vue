@@ -100,6 +100,18 @@
         <a-menu-item key="AntUpload">Upload 上传</a-menu-item>
         <a-menu-item key="AntAvatar">Avatar 头像</a-menu-item>
       </a-sub-menu>
+      <a-sub-menu key="sub9" title="08-18">
+        <template #icon>
+          <SettingOutlined />
+        </template>
+        <a-menu-item key="AntBadge">Badge 徽标数</a-menu-item>
+        <a-menu-item key="AntCalendar">Calendar 日历</a-menu-item>
+        <a-menu-item key="AntCalendar2">Calendar2 日历2</a-menu-item>
+        <a-menu-item key="AntCalendar3">Calendar3 日历3</a-menu-item>
+        <a-menu-item key="AntCard">Card 卡片</a-menu-item>
+        <a-menu-item key="AntCarousel">Carousel 走马灯</a-menu-item>
+        <a-menu-item key="AntCollapse">Collapse 折叠面板</a-menu-item>
+      </a-sub-menu>
     </a-menu>
   </div>
 </template>
@@ -136,8 +148,8 @@ export default defineComponent({
     };
     // -----------------------------------
 
-    const selectedKeys = ref(["AntTransfer3"]); // 默认选中的菜单
-    const openKeys = ref(["sub8"]); // 默认展开的导航
+    const selectedKeys = ref(["AntBadge"]); // 默认选中的菜单
+    const openKeys = ref(["sub9"]); // 默认展开的导航
     const handleClick = e => {
       console.log("click", e.key);
       console.log(route);
@@ -166,4 +178,5 @@ export default defineComponent({
   }
 });
 </script>
-<style></style>
+<style scoped>
+</style>

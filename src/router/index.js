@@ -191,6 +191,41 @@ const routes = [
     path:'/Avatar',
     name:'AntAvatar',
     component:()=>import('../views/AntAvatar.vue')
+  },
+  {
+    path:'/Badge',
+    name:'AntBadge',
+    component:()=>import('../views/AntBadge.vue')
+  },
+  {
+    path:'/Calendar',
+    name:'AntCalendar',
+    component:()=>import('../views/AntCalendar.vue')
+  },
+  {
+    path:'/Calendar2',
+    name:'AntCalendar2',
+    component:()=>import('../views/AntCalendar2.vue')
+  },
+  {
+    path:'/Calendar3',
+    name:'AntCalendar3',
+    component:()=>import('../views/AntCalendar3.vue')
+  },
+  {
+    path:'/Card',
+    name:'AntCard',
+    component:()=>import('../views/AntCard.vue')
+  },
+  {
+    path:'/Carousel',
+    name:'AntCarousel',
+    component:()=>import('../views/AntCarousel.vue')
+  },
+  {
+    path:'/Collapse',
+    name:'AntCollapse',
+    component:()=>import('../views/AntCollapse.vue')
   }
 ];
 
