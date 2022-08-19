@@ -45,6 +45,40 @@
             </template>
           </a-card-meta>
         </a-card>
+        <br />
+        <a-card style="width:95%" title="无边框样式" :bordered="false">
+          <template #cover>
+            <a-collapse v-model:activeKey="activeKey" :accordion="accordion" :bordered="false">
+              <a-collapse-panel key="1" header="This is panel header 1">
+                <a-collapse default-active-key="4" :bordered="false">
+                  <a-collapse-panel key="4" header="This is panel nest panel">
+                    <p>{{ text }}</p>
+                  </a-collapse-panel>
+                </a-collapse>
+              </a-collapse-panel>
+              <a-collapse-panel key="2" header="This is panel header 2">
+                <p>{{text}}</p>
+              </a-collapse-panel>
+              <a-collapse-panel key="3" header="This is panel header 3" :show-arrow="false">
+                <p>通过 :show-arrow="false" 来隐藏箭头</p>
+              </a-collapse-panel>
+            </a-collapse>
+          </template>
+          <a-card-meta title="无边框的折叠面板">
+            <template #avatar>
+              <a-avatar :size="50" :src="require('../assets/portrait.png')"></a-avatar>
+            </template>
+            <template #description>
+              :bordered="false"
+              <br />Card 组件也可以使用无边框属性
+              <br />
+              <a-radio-group button-style="solid" v-model:value="accordion">
+                <a-radio-button style="width:100px;text-align:center" :value="true">Accordion</a-radio-button>
+                <a-radio-button style="width:100px;text-align:center" :value="false">Normal</a-radio-button>
+              </a-radio-group>
+            </template>
+          </a-card-meta>
+        </a-card>
       </template>
     </a-card>
   </div>
