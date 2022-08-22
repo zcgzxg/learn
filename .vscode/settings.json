@@ -1,0 +1,26 @@
+{
+    "files.exclude": {
+
+    },
+    "path-intellisense.mappings": {
+        "@": "${workspaceRoot}/src"
+    },
+    "editor.parameterHints.cycle": true,
+    "editor.smoothScrolling": true,
+    "editor.tabCompletion": "on",
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": false,
+    "files.trimTrailingWhitespace": true,
+    "typescript.disableAutomaticTypeAcquisition": true,
+    "eslint.alwaysShowStatus": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.format.enable": true,
+    "editor.tabSize": 2,
+    "volar.codeLens.pugTools": false,
+    "search.exclude": {},
+    "editor.formatOnSave": true,
+    "eslint.debug": true,
+    "eslint.lintTask.enable": true
+}
