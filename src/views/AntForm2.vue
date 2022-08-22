@@ -72,6 +72,10 @@ export default {
 
     const submitForm = () => {
       // TODO: validate()和.catch()是什么
+      /* Promise.catch() */
+      /* WebAssembly.validate() 方法用于验证
+      包含 WebAssembly 二进制码的一个 typed array 是否合法，
+      返回 true 如果这些字节能构成一个合法的 wasm 模块，否则返回 false。 */
       formRef.value
         .validate()
         .then(() => {

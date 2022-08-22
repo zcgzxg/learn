@@ -226,6 +226,11 @@ const routes = [
     path:'/Collapse',
     name:'AntCollapse',
     component:()=>import('../views/AntCollapse.vue')
+  },
+  {
+    path:'/Comment',
+    name:'AntComment',
+    component:()=>import('../views/AntComment.vue')
   }
 ];
 

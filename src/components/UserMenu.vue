@@ -112,6 +112,12 @@
         <a-menu-item key="AntCarousel">Carousel 走马灯</a-menu-item>
         <a-menu-item key="AntCollapse">Collapse 折叠面板</a-menu-item>
       </a-sub-menu>
+      <a-sub-menu key="sub10" title="08-19">
+        <template #icon>
+          <SettingOutlined />
+        </template>
+        <a-menu-item key="AntComment">Comment 评论</a-menu-item>
+      </a-sub-menu>
     </a-menu>
   </div>
 </template>
@@ -148,8 +154,8 @@ export default defineComponent({
     };
     // -----------------------------------
 
-    const selectedKeys = ref(["AntBadge"]); // 默认选中的菜单
-    const openKeys = ref(["sub9"]); // 默认展开的导航
+    const selectedKeys = ref(["AntComment"]); // 默认选中的菜单
+    const openKeys = ref(["sub10"]); // 默认展开的导航
     const handleClick = e => {
       console.log("click", e.key);
       console.log(route);
