@@ -28,7 +28,7 @@
                 (e) => setSelectedKeys(e.target.value ? [e.target.value] : [])
               "
               @pressEnter="
-                handleSearch(selectedKeys, confirm, column, dataIndex)
+                handleSearch(selectedKeys, confirm, column.dataIndex)
               "
             />
             <a-button
@@ -53,14 +53,18 @@
             :style="{ color: filtered ? '#108ee9' : undefined }"
           />
         </template>
+        <!-- text 当前值； column 当前列对象 -->
         <template #customRender="{ text, column }">
           <span v-if="searchText && searchedColumn === column.dataIndex">
+            <!--匹配搜索信息 -->
             <template
               v-for="(fragment, i) in text
                 .toString()
+                // 正则匹配以searchText开始或以searchText结束的字段 参数 'i' 忽略大小写
                 .split(new RegExp(`(?<=${searchText})|(?=${searchText})`, 'i'))"
             >
               <!-- TODO: on this -->
+              <!-- Mark 带有记号的文本 -->
               <mark
                 v-if="fragment.toLowerCase() === searchText.toLowerCase()"
                 class="highlight"
@@ -71,14 +75,13 @@
               <template v-else>{{ fragment }}</template>
             </template>
           </span>
-          <template v-else>
-            {{ text }}
-          </template>
+          <template v-else> {{ text }} </template>
         </template>
       </a-table>
     </a-card>
   </a-card>
 </template>
+=
 
 <script>
 import { h } from 'vue'
@@ -309,6 +312,7 @@ export default {
       },
     ]
 
+    // 同步搜索信息
     const handleSearch = (selectedKeys, confirm, dataIndex) => {
       confirm()
       state.searchText = selectedKeys[0]
@@ -346,4 +350,3 @@ export default {
   padding: 0px;
 }
 </style>
-
