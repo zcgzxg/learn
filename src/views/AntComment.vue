@@ -70,7 +70,11 @@
         >
           <template #renderItem="{ item }">
             <a-list-item>
-              <a-comment :author="item.author" :avatar="item.avatar">
+              <a-comment
+                datetime="2022-08-22"
+                :author="item.author"
+                :avatar="item.avatar"
+              >
                 <template #actions>
                   <span v-for="(action, index) in item.actions" :key="index">{{
                     action
@@ -88,6 +92,22 @@
                     <span>{{ item.datetime.fromNow() }}</span>
                   </a-tooltip>
                 </template>
+                <a-comment>
+                  <template #actions>
+                    <span>Reply to</span>
+                  </template>
+                  <template #author>
+                    <a href="">Ginlon</a>
+                  </template>
+                  <template #avatar>
+                    <a-avatar
+                      :src="require('../assets/portrait.png')"
+                    ></a-avatar>
+                  </template>
+                  <template #content>
+                    <p>嵌套评论内容</p>
+                  </template>
+                </a-comment>
               </a-comment>
             </a-list-item>
           </template>
@@ -162,3 +182,4 @@ export default defineComponent({
 })
 </script>
 <style scoped></style>
+

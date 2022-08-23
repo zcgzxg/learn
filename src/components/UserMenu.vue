@@ -118,18 +118,36 @@
         </template>
         <a-menu-item key="AntComment">Comment 评论</a-menu-item>
       </a-sub-menu>
+      <a-sub-menu key="sub11" title="08-23">
+        <template #icon>
+          <SettingOutlined />
+        </template>
+        <a-menu-item key="AntDescriptions">Description 描述</a-menu-item>
+        <a-menu-item key="AntEmpty">Empty 描述</a-menu-item>
+        <a-menu-item key="AntImage">Image 图像</a-menu-item>
+        <a-menu-item key="AntList">List 列表</a-menu-item>
+        <a-menu-item
+          style="height: 50px; line-height: 18px"
+          key="AntPop&Statistic"
+        >
+          Popover 气泡卡片<br />
+          Statistic 统计数值
+        </a-menu-item>
+        <a-menu-item key="AntTable">Table 表格</a-menu-item>
+        <a-menu-item key="AntTable2">Table2 表格2</a-menu-item>
+      </a-sub-menu>
     </a-menu>
   </div>
 </template>
 <script>
-import { defineComponent, ref, watch } from "vue";
-import { useRouter, useRoute } from "vue-router";
+import { defineComponent, ref, watch } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import {
   MailOutlined,
   // QqOutlined,
   AppstoreOutlined,
-  SettingOutlined
-} from "@ant-design/icons-vue";
+  SettingOutlined,
+} from '@ant-design/icons-vue'
 /* eslint-disable */
 
 export default defineComponent({
@@ -137,40 +155,40 @@ export default defineComponent({
     MailOutlined,
     // QqOutlined,
     AppstoreOutlined,
-    SettingOutlined
+    SettingOutlined,
   },
 
   setup() {
-    const router = useRouter();
-    const route = useRoute();
-    const collapsed = ref(false);
+    const router = useRouter()
+    const route = useRoute()
+    const collapsed = ref(false)
     function toggleCollapsed() {
-      collapsed.value = !collapsed.value;
+      collapsed.value = !collapsed.value
     }
     // --------- 导航主题 -----------------
-    const theme = ref("light");
-    const changeTheme = checked => {
-      theme.value = checked ? "dark" : "light";
-    };
+    const theme = ref('light')
+    const changeTheme = (checked) => {
+      theme.value = checked ? 'dark' : 'light'
+    }
     // -----------------------------------
 
-    const selectedKeys = ref(["AntComment"]); // 默认选中的菜单
-    const openKeys = ref(["sub10"]); // 默认展开的导航
-    const handleClick = e => {
-      console.log("click", e.key);
-      console.log(route);
-      router.push({ name: e.key, params: { id: "Ginlon" } });
-    };
-    const titleClick = e => {
-      console.log("titleClick", e);
-    };
+    const selectedKeys = ref(['AntTable']) // 默认选中的菜单
+    const openKeys = ref(['sub11']) // 默认展开的导航
+    const handleClick = (e) => {
+      console.log('click', e.key)
+      console.log(route)
+      router.push({ name: e.key, params: { id: 'Ginlon' } })
+    }
+    const titleClick = (e) => {
+      console.log('titleClick', e)
+    }
 
     watch(
       () => openKeys,
-      val => {
-        console.log("openKeys", val);
+      (val) => {
+        console.log('openKeys', val)
       }
-    );
+    )
     return {
       selectedKeys,
       openKeys,
@@ -179,10 +197,10 @@ export default defineComponent({
       collapsed,
       toggleCollapsed,
       theme,
-      changeTheme
-    };
-  }
-});
+      changeTheme,
+    }
+  },
+})
 </script>
-<style scoped>
-</style>
+
+<style scoped></style>
