@@ -270,6 +270,36 @@ const routes = [
     name: 'AntTable2',
     component: () => import('../views/AntTable2.vue'),
   },
+  {
+    path: '/Table3',
+    name: 'AntTable3',
+    component: () => import('../views/AntTable3.vue'),
+  },
+  {
+    path: '/Table4',
+    name: 'AntTable4',
+    component: () => import('../views/AntTable4.vue'),
+  },
+  {
+    path: '/Tab',
+    name: 'AntTab',
+    component: () => import('../views/AntTab.vue'),
+  },
+  {
+    path: '/Timeline',
+    name: 'AntTimeline',
+    component: () => import('../views/AntTimeline.vue'),
+  },
+  {
+    path: '/Tree',
+    name: 'AntTree',
+    component: () => import('../views/AntTree.vue'),
+  },
+  {
+    path: '/Alert',
+    name: 'AntAlert',
+    component: () => import('../views/AntAlert.vue'),
+  },
 ]
 
 const router = createRouter({

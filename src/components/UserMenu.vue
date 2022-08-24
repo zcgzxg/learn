@@ -123,7 +123,7 @@
           <SettingOutlined />
         </template>
         <a-menu-item key="AntDescriptions">Description 描述</a-menu-item>
-        <a-menu-item key="AntEmpty">Empty 描述</a-menu-item>
+        <a-menu-item key="AntEmpty">Empty 空状态</a-menu-item>
         <a-menu-item key="AntImage">Image 图像</a-menu-item>
         <a-menu-item key="AntList">List 列表</a-menu-item>
         <a-menu-item
@@ -136,10 +136,31 @@
         <a-menu-item key="AntTable">Table 表格</a-menu-item>
         <a-menu-item key="AntTable2">Table2 表格2</a-menu-item>
       </a-sub-menu>
+      <a-sub-menu key="sub12" title="08-24">
+        <template #icon>
+          <loading-outlined />
+        </template>
+        <a-menu-item key="AntTable3">Table3 表格3</a-menu-item>
+        <a-menu-item key="AntTable4">Table4 表格4</a-menu-item>
+        <a-menu-item key="AntTab">Tab 标签页</a-menu-item>
+        <a-menu-item key="AntTimeline">Timeline 时间轴</a-menu-item>
+
+        <a-menu-item key="AntTree">
+          <template #icon>
+            <a-tooltip color="orange" placement="left">
+              <a-badge status="warning" />
+              Tree 树形控件
+              <template #title>拖拽事件 <br />understanding</template>
+            </a-tooltip>
+          </template>
+        </a-menu-item>
+        <a-menu-item key="AntAlert">Alert 警告</a-menu-item>
+      </a-sub-menu>
     </a-menu>
   </div>
 </template>
 <script>
+import { LoadingOutlined } from '@ant-design/icons-vue'
 import { defineComponent, ref, watch } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import {
@@ -156,6 +177,7 @@ export default defineComponent({
     // QqOutlined,
     AppstoreOutlined,
     SettingOutlined,
+    LoadingOutlined,
   },
 
   setup() {
@@ -172,8 +194,8 @@ export default defineComponent({
     }
     // -----------------------------------
 
-    const selectedKeys = ref(['AntTable']) // 默认选中的菜单
-    const openKeys = ref(['sub11']) // 默认展开的导航
+    const selectedKeys = ref(['AntAlert']) // 默认选中的菜单
+    const openKeys = ref(['sub12']) // 默认展开的导航
     const handleClick = (e) => {
       console.log('click', e.key)
       console.log(route)
@@ -204,3 +226,4 @@ export default defineComponent({
 </script>
 
 <style scoped></style>
+

@@ -79,6 +79,51 @@
         </template>
       </a-table>
     </a-card>
+    <a-card title="可编辑单元格">
+      <a-button
+        class="editable-add-btn"
+        @click="handleAdd"
+        style="margin-bottom: 8px"
+      >
+        Add
+      </a-button>
+      <a-table bordered :data-source="dataSourceEdit" :columns="columnsEdit">
+        <template #name="{ text, record }">
+          <div class="editable-cell">
+            <div
+              v-if="editableData[record.key]"
+              class="editable-cell-input-wrapper"
+            >
+              <a-input
+                v-model:value="editableData[record.key].name"
+                @pressEnter="save(record.key)"
+              />
+              <check-outlined
+                class="editable-cell-icon-check"
+                @click="save(record.key)"
+              />
+            </div>
+            <div v-else class="editable-cell-text-wrapper">
+              {{ text || ' ' }}
+              <edit-outlined
+                class="editable-cell-icon"
+                @click="edit(record.key)"
+              />
+            </div>
+          </div>
+        </template>
+        <template #operation="{ record }">
+          <!-- 确认信息气泡 -->
+          <a-popconfirm
+            v-if="dataSourceEdit.length"
+            title="Sure to delete?"
+            @confirm="onDelete(record.key)"
+          >
+            <a>Delete</a>
+          </a-popconfirm>
+        </template>
+      </a-table>
+    </a-card>
   </a-card>
 </template>
 =
@@ -143,9 +188,13 @@ const data = [
 ]
 // Table Col/RowSpan End-----------------------------------------------------
 
-// Table Search--------------------------------------------------------------
-import { SearchOutlined } from '@ant-design/icons-vue'
-import { reactive, ref, toRefs } from 'vue'
+import {
+  SearchOutlined,
+  CheckOutlined,
+  EditOutlined,
+} from '@ant-design/icons-vue'
+import { reactive, ref, toRefs, computed } from 'vue'
+import { cloneDeep } from 'lodash-es'
 const dataSearch = [
   {
     key: '1',
@@ -172,7 +221,6 @@ const dataSearch = [
     address: 'London No. 2 Lake Park',
   },
 ]
-// Table Search End----------------------------------------------------------
 
 export default {
   setup() {
@@ -266,8 +314,8 @@ export default {
         onFilterDropdownVisibleChange: (visible) => {
           if (visible) {
             setTimeout(() => {
-              console.log(searchInput.value)
-              searchInput.value.focus()
+              console.log('aasfd', searchInput.value)
+              searchInput.value.focus() // 点开后自动获取焦点
             }, 100)
           }
         },
@@ -325,6 +373,82 @@ export default {
     }
     // Table Search End----------------------------------------------------------
 
+    // Editable cell --------------------------------------------------------
+    const columnsEdit = [
+      {
+        title: 'name',
+        dataIndex: 'name',
+        width: '30%',
+        slots: {
+          customRender: 'name',
+        },
+      },
+      {
+        title: 'age',
+        dataIndex: 'age',
+      },
+      {
+        title: 'address',
+        dataIndex: 'address',
+      },
+      {
+        title: 'operation',
+        dataIndex: 'operation',
+        slots: {
+          customRender: 'operation',
+        },
+      },
+    ]
+    const dataSourceEdit = ref([
+      {
+        key: '0',
+        name: 'Edward King 0',
+        age: 32,
+        address: 'London, Park Lane no. 0',
+      },
+      {
+        key: '1',
+        name: 'Edward King 1',
+        age: 32,
+        address: 'London, Park Lane no. 1',
+      },
+    ])
+
+    const count = computed(() => dataSourceEdit.value.length + 1)
+    const editableData = reactive({}) // 临时编辑数据对象
+
+    const edit = (key) => {
+      editableData[key] = cloneDeep(
+        // 深拷贝源数据到临时编辑对象中方便后续修改
+        dataSourceEdit.value.filter((item) => key === item.key)[0]
+      )
+    }
+
+    const save = (key) => {
+      Object.assign(
+        // 将临时编辑数据对象的数据拷贝到源数据数组中对应位置
+        dataSourceEdit.value.filter((item) => key === item.key)[0],
+        editableData[key]
+      )
+      delete editableData[key]
+    }
+
+    const onDelete = (key) => {
+      dataSourceEdit.value = dataSourceEdit.value.filter(
+        (item) => item.key != key
+      )
+    }
+
+    const handleAdd = () => {
+      const newData = {
+        key: `${count.value}`,
+        name: `Edward King${count.value}`,
+        age: 32,
+        address: `London, Park Lane no.${count.value}`,
+      }
+      dataSourceEdit.value.push(newData)
+    }
+    // Editable cell End ----------------------------------------------------
     return {
       // Table Col/RowSpan-----------
       data,
@@ -336,10 +460,22 @@ export default {
       handleReset,
       searchInput,
       ...toRefs(state),
+      // Editable Cell ---------------
+      columnsEdit,
+      dataSourceEdit,
+      onDelete,
+      handleAdd,
+      editableData,
+      count,
+      edit,
+      save,
+      // Editable Cell End -----------
     }
   },
   components: {
     SearchOutlined,
+    CheckOutlined,
+    EditOutlined,
   },
 }
 </script>
@@ -350,3 +486,4 @@ export default {
   padding: 0px;
 }
 </style>
+
